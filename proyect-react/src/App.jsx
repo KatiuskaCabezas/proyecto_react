@@ -1,34 +1,27 @@
+// Recibe todo de los componentes
+
 import './App.css';
-import { Boton } from './components/Boton';
-import { Item1 } from './components/Items1';
-import { Item2 } from './components/Items2';
-import { Item3 } from './components/Items3';
-import { Item4 } from './components/Items4';
-import { Item5 } from './components/Items5';
-import { Item6 } from './components/Items6';
+import { Footer } from './components/Footer/Footer';
+import { Header } from './components/Header/Header';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
 function App() {
-  const prod = { nombre: "Remera", precio: 20000, descripcion: "Ropa deportiva" };
+  const arrayProducts = [
+    { id: 1, nombre: "Remera", precio: 20000, descripcion: "Remera de algodón" },
+    { id: 2, nombre: "Pantalon", precio: 80000, descripcion: "Pantalon de jean" },
+    { id:3, nombre: "Zapatilla", precio: 200000, descripcion: "Zapatillas deportivas" }
+
+  ]
+
+  // const prod = { nombre: "Remera", precio: 20000, descripcion: "Ropa deportiva" };
   
   return (
     <>
       <div>
-        <Boton texto={"Enviar"} color={"green"} />
-        <Boton texto={"Cancelar"} color={"red"} />
-        <Item1 nombre={prod.nombre} precio={prod.precio} />
-        {/* clave valor */}
-        <Item2 item={prod}/> 
-        {/* se pasa solo el valor, y nº cantidad de valores que necesite */}
-        <Item3 {...prod} />
-        <Item4 {...prod} destacado={false} />
-        <Item6 nombre= "Remera" precio= {50000}/>
-        <Item5>
-          <h1>Item 5</h1>
-          <p>{prod.nombre} </p>
-          <p>{prod.precio} </p>
-        </Item5>
-
-    
+           <Header />
+           <ItemListContainer titulo= {"Bienvenidos a la tienda de Embark"} 
+              productos= {arrayProducts} />
+           <Footer />
         
         
         
