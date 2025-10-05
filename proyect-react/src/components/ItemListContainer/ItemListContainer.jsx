@@ -5,7 +5,7 @@ import { ItemList } from "../Item.List/Item.List";
 export const ItemListContainer = ({ titulo, productos }) => {
     // estado
 
-    // llamada
+    // llama a una API
 
     return (
         <section>

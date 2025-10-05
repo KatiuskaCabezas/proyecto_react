@@ -1,7 +1,9 @@
 // Recibe todo de los componentes
 
 import './App.css';
+import { Boton } from './components/Boton';
 import { Footer } from './components/Footer/Footer';
+import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
@@ -19,11 +21,15 @@ function App() {
     <>
       <div>
            <Header />
-           <ItemListContainer titulo= {"Bienvenidos a la tienda de Embark"} 
-              productos= {arrayProducts} />
-           <Footer />
-        
-        
+
+           <Boton color={'green'} texto={'Saludar'}/>
+
+           <Form />
+
+           {/* <ItemListContainer titulo= {"Bienvenidos a la tienda de Embark"} 
+              productos= {arrayProducts} />  */}
+
+           <Footer /> 
         
       </div>
       

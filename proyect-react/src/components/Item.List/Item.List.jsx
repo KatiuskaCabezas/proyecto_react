@@ -1,10 +1,12 @@
-// Se encarga de decidir si le pasa las cosas a Item o muestra un p
+// Se encarga de decidir si le pasa las cosas a Item o muestra un p, solo mapea
 
 import { Item } from "../Item/Item"
 
 export const ItemList = ({lista}) => {
 
     //El fragment <></> sirve para no crear otro nodo que contenga los productos
+    /*Para que map funcione se debe incluir el key y siempre va en el padre*/
+    //En este caso se pasa como operador spread, para pasar clave valor del prop
 
     return ( <>
 

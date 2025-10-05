@@ -1,7 +1,8 @@
-// Es donde pasan las props
+// Es donde pasan las props, se crea la card
+//Se incluye Children
 
 export const Item = ({nombre, precio, descripcion, children}) => {
-     /*El key siempre va en el padre, en este caso en el aerticle*/
+     
     return (
         <article >
                     <h2>{nombre}</h2>
