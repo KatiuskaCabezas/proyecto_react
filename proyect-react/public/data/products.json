@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Shampoo Anticaída",
+    "price": 7000,
+    "category": "Capilar",
+    "description": "Shampoo sólido anticaída, con Romero para todo tipo de cabello.",
+    "imageUrl": "/images/shampoo.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Acondicionador Detox",
+    "price": 8000,
+    "category": "Capilar",
+    "description": "Acondicionador sólido ditox, para todo tipo de cabello.",
+    "imageUrl": "/images/acondicionador.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Crema Facial",
+    "category": "Facial",
+    "price": 9000,
+    "description": "Crema facial, para cutis graso con aceite de tea tree y lavanda.",
+    "imageUrl": "/images/crema.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Jabón de Avena",
+    "category": "Jaboneria",
+    "price": 3000,
+    "description": "Jabón corporal con avena y aceite de coco, para todo tipo de piel.",
+    "imageUrl": "/images/jabon.jpg"
+  }
+]
