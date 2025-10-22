@@ -9,6 +9,7 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         fetch("/data/products.json")
+
         .then((res) => {
             if(!res.ok){
                 throw new Error("Hubo un problema al buscar productos"); //Se ve con el host                
@@ -17,7 +18,7 @@ export const ItemDetailContainer = () => {
         })
 
         //Para traer el ID del producto que queramos
-        .then((data) => () => {
+        .then((data) => {
             const found = data.find((p) => p.id === "1");
             if (found) {
                 setDetail(found);
@@ -31,11 +32,14 @@ export const ItemDetailContainer = () => {
 
     }, []);    
 
-    return <main>
+    return (
+    <main>
         {Object.keys(detail).length ? (
-            <ItemDetail detail= { detail }/> 
+            <ItemDetail detail= { detail } /> 
         ) : ( 
-        <p> Cargando...</p>)}
+        <p> Cargando...</p>)
+        }
 
-    </main>;
-}
+    </main>
+    );
+};

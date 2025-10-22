@@ -2,7 +2,7 @@
 
 export const Footer = () => {
     return <footer>
-        <p>Pagina creada por Katiuska</p>
+        <p>Página creada por Katiuska Cabezas</p>
 
     </footer>
 }
