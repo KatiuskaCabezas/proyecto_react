@@ -1,6 +1,7 @@
 //Retorna de la API el detalle
 
 import { useEffect, useState } from "react"
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const ItemDetailContainer= () => {
     const [detail, setDetail] = useState({});
@@ -31,7 +32,7 @@ export const ItemDetailContainer= () => {
 
     return <main>
         {Object.keys(detail).length ? (
-            <itenDettail detail={detail}/> 
+            <ItemDetail detail={detail}/> 
         ) : 
         ( <p> Cargando...</p>)}
     </main>;
