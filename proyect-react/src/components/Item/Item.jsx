@@ -14,6 +14,5 @@ export const Item = ({name, price, category, description, imageUrl, children}) =
                     <p>Descripción: {description}</p>
                     {children}
                 </article>
-    )
-    
-}
+    );    
+};
