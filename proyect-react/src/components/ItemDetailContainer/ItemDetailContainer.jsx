@@ -19,7 +19,7 @@ export const ItemDetailContainer = () => {
 
         //Para traer el ID del producto que queramos
         .then((data) => {
-            const found = data.find((p) => p.id === "1");
+            const found = data.find((p) => p.id === "5");
             if (found) {
                 setDetail(found);
             } else {
