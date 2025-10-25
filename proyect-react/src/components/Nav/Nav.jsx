@@ -1,17 +1,16 @@
 //Componete presentacional
 
+import { Link } from "react-router-dom";
+
 export const Nav = () => {
   return (
     <nav>
       <ul>
         <li>
-          <a href="./#">Home</a>
+          <Link to={"/category/capilar"}>Capilar</Link>
         </li>
         <li>
-          <a href="./#">DLC</a>
-        </li>
-        <li>
-          <a href="./#">Juegos</a>
+          <Link to={"/category/corporal"}>Corporal</Link>
         </li>
       </ul>
     </nav>
