@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 export const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({}); //{} valor true
 
-    const {id}= useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         fetch("/data/products.json")

@@ -1,6 +1,7 @@
 // Se encarga de decidir si le pasa las cosas a Item o muestra un p, solo mapea
 
-import { Item } from "../Item/Item"
+import { Link } from "react-router-dom";
+import { Item } from "../Item/Item";
 
 export const ItemList = ({lista}) => {
 
@@ -10,19 +11,20 @@ export const ItemList = ({lista}) => {
 
     return ( <>
 
-        {lista.length ? (lista.map((prod) => (
-            <Item key= {prod.id} {...prod}>
-                <button>soy un botón</button>
-            </Item>
-            ) ) 
+        {lista.length ? (
+            lista.map((prod) => (
+            <Link to={`/detail/${prod.id}`} key= {prod.id}>
+            <Item  {...prod} />
+            </Link>        
+          ) ) 
         ) : (
                 <p>No hay productos</p>
             )}        
      </>
-    )   
+    );   
     
-     /* El ternario ? se usa como if y : como else, el map, mapea el true */ 
+     /* El map, mapea el true */ 
      /* Todo mapeo de algo que se renderiza dinamicamente tiene que pasarle el key,
      para que el React sepa a quien le esta modificando cosas*/
    
-}
+};
