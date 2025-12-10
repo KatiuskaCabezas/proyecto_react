@@ -16,10 +16,10 @@ export const CartProvider = ({children}) => {
     //Para saber si el producto existe en el carrito
      const addItem = (item) => {
     if (exists(item.id)) {
-      //map, cuido mutacion a nivel del array
+      
       const updatedCart = cart.map((prod) => {
         if (prod.id === item.id) {
-          //cuido mutacion a nivel de objeto
+          
           return { ...prod, quantity: prod.quantity + item.quantity };
         } else {
           return prod;
@@ -48,16 +48,15 @@ export const CartProvider = ({children}) => {
 
     /* --------------  Calcular total de ítems en el carrito ----------------- */
     const getTotalItems = () => {
-        if (cart.length) {
-        return cart.length;
-        }
-    };
+      const totalItems = cart.reduce((acc, p) => acc + p.quantity, 0);
+      return totalItems;
+  };
 
     /* -------------------  Calcular total  --------------------- */
   const total = () => {
-    const total = cart.reduce((acc, p) => acc + p.price * p.quantity, 0);
+    const total = cart.reduce((acc, p) => acc + p.price * p.quantity, 0); //reduce= acumula
 
-    return Math.round(total * 100) / 100;
+    return Math.round(total * 100) / 100; //deja 2 decimales
   };
 
   /* -------------------  Confirmar compra  --------------------- */

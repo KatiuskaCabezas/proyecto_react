@@ -1,3 +1,5 @@
+//Cuenta la cantidad de prodcutos en el carrito
+
 import { useState } from "react";
 import "./Count.css";
 

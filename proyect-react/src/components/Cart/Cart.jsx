@@ -29,6 +29,7 @@ export const Cart = () => {
           <div className="total-pagar">
             <p>Total a pagar: ${total()}</p>
           </div>
+          
           <button className="btn" onClick={checkout}>
             Finalizar compra
           </button>

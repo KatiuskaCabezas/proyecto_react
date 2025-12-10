@@ -2,9 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { ItemList } from "../Item.List/Item.List";
+import { useParams } from "react-router-dom";
+
+import "./ItemListContainer.css";
 
 export const ItemListContainer = ({ titulo }) => {
     const [products, setProducts] = useState([]);
+
+    const { category } = useParams();
 
     useEffect(() => {
         fetch("/data/products.json")      //Buscamos la ruta de los productos
@@ -19,18 +24,17 @@ export const ItemListContainer = ({ titulo }) => {
 
      //Esperamos la data de los datos transformamos en JS, 
      // la palabra data la ponemos nosotros
-        .then((data) => {
-            setProducts(data);             
-        })
-        
-    // la palabra error la ponemos nosotros
-        .catch((error) => {
-            console.log(error);
-            
-        });
-
-     //Array de dependencias, por ahora se queda vacio    
-    }, []);    
+       .then((data) => {
+        if (category) {
+          setProducts(data.filter((prod) => prod.category === category));
+        } else {
+          setProducts(data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [category]);  
 
     return (
         <section>
