@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <BrowserRouter>  
-    <CartProvider>
+    <CartProvider>   
       <div>
            <Header />
            <Routes>
@@ -22,7 +22,7 @@ function App() {
            </Routes>                                 
            <Footer />         
       </div>
-      </CartProvider>
+      </CartProvider>       
     </BrowserRouter>             
     </>
   );

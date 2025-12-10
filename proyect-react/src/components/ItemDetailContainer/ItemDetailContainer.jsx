@@ -36,7 +36,7 @@ export const ItemDetailContainer = () => {
     }, [id]);    
 
     return (
-    <main>
+    <main className="detail-container">
         {Object.keys(detail).length ? (
             <ItemDetail detail= { detail } /> 
         ) : ( 
