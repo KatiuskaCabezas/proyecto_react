@@ -14,16 +14,32 @@ export const CartProvider = ({children}) => {
     };
 
     //Para saber si el producto existe en el carrito
-    const addItem = (item) => {
-        if (exists(item.id)) {
-        alert(`El Producto ya Existe`);
-        return;      
+     const addItem = (item) => {
+    if (exists(item.id)) {
+      //map, cuido mutacion a nivel del array
+      const updatedCart = cart.map((prod) => {
+        if (prod.id === item.id) {
+          //cuido mutacion a nivel de objeto
+          return { ...prod, quantity: prod.quantity + item.quantity };
+        } else {
+          return prod;
         }
+      });
+      setCart(updatedCart);
+      alert(`Agregado al carrito`);
+    } else {
+      setCart([...cart, item]);
+      alert(`${item.name} agregado`);
+    }
+  };
 
-        setCart([...cart, item]);
-        alert(`${item.name} agregado`);
-    
-    };
+  /* ------------------   Eliminar producto con filter  ------------------- */
+  const deleteItem = (id) => {
+    const filtered = cart.filter((p) => p.id !== id);
+    setCart(filtered);
+    alert("Producto eliminado");
+  };
+
 
      /* ---------------  Vaciar carrito    ------------------ */
     const clearCart = () => {
@@ -37,14 +53,32 @@ export const CartProvider = ({children}) => {
         }
     };
 
+    /* -------------------  Calcular total  --------------------- */
+  const total = () => {
+    const total = cart.reduce((acc, p) => acc + p.price * p.quantity, 0);
+
+    return Math.round(total * 100) / 100;
+  };
+
+  /* -------------------  Confirmar compra  --------------------- */
+
+    const checkout = () => {
+    const ok = confirm("¿Serguro que quiere finalizar la compra?");
+
+    if (ok) {
+      alert("¡Compra realizada con éxito!");
+      clearCart();
+    }
+  };
+
     const values = {
     cart,
     addItem,
     clearCart,
     getTotalItems,
-    // deleteItem,
-    // total,
-    // checkout,
+    deleteItem,
+    total,
+    checkout,
   };
 
  return (
