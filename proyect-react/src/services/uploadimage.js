@@ -1,11 +1,11 @@
 // Esta funcion la hacemos para solucionar el problema de mockAPI que no permite
 // subir imagenes: subimos imagenes a imgbb y devuelve una URL publica.
-// Luego esa URL la usamos para mockAPI 😉
+// Luego esa URL la usamos para mockAPI 
 //
 // ⚠️ Importante: esta clave queda expuesta en el cliente.
 //     Para prácticas esta ok, pero no es ideal para ambientes reales.
 
-const IMGBB_API_KEY = "2f974ab24d6f938a0291fcaad29d29bb"; //👈reemplazan por la suya
+const IMGBB_API_KEY = "2f974ab24d6f938a0291fcaad29d29bb"; //reemplazan por la suya
 const ENDPOINT = "https://api.imgbb.com/1/upload";
 
 // Funcion con la que vamos a convertir la imagen (File) a cadena base64
