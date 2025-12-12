@@ -3,10 +3,10 @@
   max-width: 720px;
   margin: 2rem auto;
   padding: 1.25rem 1.5rem;
-  background: hsl(235, 52%, 76%); /* fondo claro */
-  color: #222; /* texto oscuro */
+  background: hsl(235, 52%, 76%); 
+  color: #222;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* sombra suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
   border: 1px solid #e6e6e6;
 }
 
@@ -61,7 +61,7 @@
 
 /* Hover */
 .btn:hover {
-  background: #f2f2f2;        /* gris suave */
+  background: #f2f2f2;       
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
