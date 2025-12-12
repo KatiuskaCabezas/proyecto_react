@@ -37,24 +37,21 @@
 .product-form input[type="file"],
 .product-form textarea {
   width: 100%;
-  padding: 0.6rem 0.75rem;
+  padding: 0.6rem 0.4rem;
   border: 1px solid #cccccc;
   border-radius: 8px;
-  background: #f8f8f8; /* gris claro */
+  background: #f8f8f8; 
   color: #222;
   outline: none;
 }
 
-/* ----------------------------- */
-/*           BOTÓN               */
-/* ----------------------------- */
-
+/* --------------  BOTÓN  ---------*/
 .btn {
   display: inline-block;
   padding: 0.65rem 1.3rem;
-  border: 2px solid #000;     /* borde negro */
-  background: #ffffff;        /* fondo blanco */
-  color: #000;                /* texto negro */
+  border: 2px solid #076868;     
+  background: #72DBB8;        
+  color: #000;                
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
