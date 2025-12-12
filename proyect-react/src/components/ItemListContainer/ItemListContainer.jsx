@@ -9,10 +9,13 @@ import "./ItemListContainer.css";
 export const ItemListContainer = ({ titulo }) => {
     const [products, setProducts] = useState([]);
 
-    const { category } = useParams();
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        fetch("/data/products.json")      //Buscamos la ruta de los productos
+
+      const URL = "https://6939fe90c8d59937aa098a9d.mockapi.io/products";
+
+        fetch(URL)  //URL API
         
      //Esperar la respuesta de la promesa, la palabra res la ponemos nosotros
         .then((res) => {
@@ -25,8 +28,8 @@ export const ItemListContainer = ({ titulo }) => {
      //Esperamos la data de los datos transformamos en JS, 
      // la palabra data la ponemos nosotros
        .then((data) => {
-        if (category) {
-          setProducts(data.filter((prod) => prod.category === category));
+        if (categoryId) {
+          setProducts(data.filter((prod) => prod.category === categoryId));
         } else {
           setProducts(data);
         }
@@ -34,7 +37,7 @@ export const ItemListContainer = ({ titulo }) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [category]);  
+  }, [categoryId]);  
 
     return (
         <section>
