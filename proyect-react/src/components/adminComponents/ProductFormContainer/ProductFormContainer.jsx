@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
 import { validateProduct } from "../../../utils/validateProducts";
-import { uploadToImgbb } from "../../../services/uploadImage";
+import { uploadToImgbb } from "../../../services/uploadImage.js";
 import { createProduct } from "../../../services/products";
 import "../ProductFormContainer/ProductFormContainer.css";
 
@@ -17,7 +17,7 @@ export const ProductFormContainer = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;  // desestructuramos
+    const { name, value } = e.target;
     setProduct({ ...product, [name]: value });
   };
 
@@ -38,7 +38,7 @@ export const ProductFormContainer = () => {
       const productData = {
         ...product,
         price: Number(product.price),
-        imageUrl, 
+        imageUrl,
       };
 
       await createProduct(productData);
