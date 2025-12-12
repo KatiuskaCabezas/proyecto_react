@@ -5,7 +5,13 @@ import { Nav } from "../Nav/Nav";
 export const Header = () => {
   return (
     <header>
-      <Link to={"/images/logo.jpg"}>LOGO</Link>
+      <Link to="/">
+  <img 
+    src="/images/logo.jpg" 
+    alt="Logo"
+    style={{ height: "50px", cursor: "pointer" }}
+  />
+</Link>
       <Nav />
     </header>
   );
